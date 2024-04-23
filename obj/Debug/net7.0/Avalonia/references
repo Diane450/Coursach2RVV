@@ -22,6 +22,7 @@ C:\Users\Home\.nuget\packages\avalonia.themes.fluent\11.0.6\lib\net6.0\Avalonia.
 C:\Users\Home\.nuget\packages\avalonia.themes.simple\11.0.6\lib\net6.0\Avalonia.Themes.Simple.dll
 C:\Users\Home\.nuget\packages\avalonia.win32\11.0.6\lib\net6.0\Avalonia.Win32.dll
 C:\Users\Home\.nuget\packages\avalonia.x11\11.0.6\lib\net6.0\Avalonia.X11.dll
+C:\Users\Home\.nuget\packages\citrus.avalonia\2.1.1\lib\netstandard2.0\Citrus.Avalonia.dll
 C:\Users\Home\.nuget\packages\dynamicdata\7.9.5\lib\net6.0\DynamicData.dll
 C:\Users\Home\.nuget\packages\harfbuzzsharp\7.3.0\lib\net6.0\HarfBuzzSharp.dll
 C:\Users\Home\.nuget\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll
@@ -46,7 +47,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\Micros
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\Microsoft.VisualBasic.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\Microsoft.Win32.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\Microsoft.Win32.Registry.dll
-C:\Users\Home\.nuget\packages\microsoft.win32.systemevents\6.0.0\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Home\.nuget\packages\microsoft.win32.systemevents\7.0.0\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\mscorlib.dll
 C:\Users\Home\.nuget\packages\mysqlconnector\2.2.5\lib\net7.0\MySqlConnector.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\netstandard.dll
@@ -84,7 +85,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\System
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\System.Diagnostics.TraceSource.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\System.Diagnostics.Tracing.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\System.dll
-C:\Users\Home\.nuget\packages\system.drawing.common\6.0.0\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Home\.nuget\packages\system.drawing.common\7.0.0\lib\net7.0\System.Drawing.Common.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\System.Drawing.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\System.Drawing.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.18\ref\net7.0\System.Dynamic.Runtime.dll

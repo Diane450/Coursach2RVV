@@ -18,6 +18,9 @@ build_property.ProjectDir = C:\Users\Home\Desktop\курсачи\kursachRVV\
 [C:/Users/Home/Desktop/курсачи/kursachRVV/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Home/Desktop/курсачи/kursachRVV/Styles/Styles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Home/Desktop/курсачи/kursachRVV/Views/AdminWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

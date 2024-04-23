@@ -3,14 +3,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:vm="using:kursachRVV.ViewModels"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" MinWidth="875" MinHeight="560" Width="875" Height="560"
         x:Class="kursachRVV.AdminWindow"
         x:DataType="vm:AdminWindowViewModel"
         Icon="/Assets/logo.png"
         Title="Терминал сотрудника техподдержки">
+	<Window.Styles>
+		<StyleInclude Source="/Styles/Styles.axaml"/>
+	</Window.Styles>
 	
 	<StackPanel Orientation="Vertical">
-		<StackPanel Orientation="Horizontal">
+		<StackPanel Orientation="Horizontal" Background="#6B212121">
 			
 			<ComboBox ItemsSource="{Binding Srochnosts}" Height="40" SelectedItem="{Binding SelectedSrochnost}" SelectedValueBinding="{Binding Id}" Margin="10">
 				<ComboBox.ItemTemplate>
@@ -30,10 +33,11 @@
 
 			<ComboBox ItemsSource="{Binding SortValues}" Height="40" SelectedItem="{Binding SelectedSortValues}" FontSize="16" Margin="10"/>
 		
-			<Button Content="Найти" Command="{Binding Search}"/>
-			<TextBox Text="{Binding SearchId}" Margin="20 0 0 0" Height="30" Width="120" MaxLength="10" Watermark="Id заявки"/>
+			<TextBox Text="{Binding SearchId}" Padding="5" Background="White"  Height="30" Width="120" MaxLength="10" Watermark="Id заявки"/>
+			<Button Content="Найти" Command="{Binding Search}" Height="30" Margin="20 0 0 0" Padding="5"/>
 		</StackPanel>
-		<Grid ColumnDefinitions="200, *" Height="750" MinHeight="560" Background="White" HorizontalAlignment="Left" IsVisible="{Binding !IsMessageVisible}">
+		
+		<Grid ColumnDefinitions="200, *" Height="750" MinHeight="560" Background="White" HorizontalAlignment="Left" IsVisible="{Binding !IsMessageVisible}" Width="1600">
 			<ListBox ItemsSource="{Binding Zayavki}" SelectedItem="{Binding SelectedZayavka}" SelectionMode="Single" Width="150" Grid.Column="0" HorizontalAlignment="Left">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
@@ -44,7 +48,7 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<Grid ColumnDefinitions="*, *" RowDefinitions="*, *, *, *, *, *, *" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 20 0 0">
+			<Grid ColumnDefinitions="200, *" RowDefinitions="*, *, *, *, *, *, *" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 20 0 0">
 				<TextBlock Text="Описание: " Grid.Column="0" Grid.Row="0" />
 				<TextBlock Text="Срочность: " Grid.Column="0" Grid.Row="1"/>
 				<TextBlock Text="Расположение: " Grid.Column="0" Grid.Row="2"/>
@@ -59,7 +63,7 @@
 				<TextBlock Text="{Binding SelectedZayavka.Status.Statys}" Grid.Column="1" Grid.Row="4"/>
 				<TextBlock Text="{Binding SelectedZayavka.Ispolnitel.TexOtSotrydnikNavigation.Familia}" Grid.Column="1" Grid.Row="5"/>
 				<TextBlock Text="Не определен" IsVisible="{Binding !IsIspolnitelDefined}" Foreground="IndianRed" Grid.Column="1" Grid.Row="5"/>
-				<Button Content="Изменить" Click="ChangeZayavka" Grid.Column="1" Grid.Row="5" Margin="30"/>
+				<Button Content="Изменить" Click="ChangeZayavka" Grid.Column="1" Grid.Row="5" Width="150" HorizontalAlignment="Left" Margin="0 40 0 0"/>
 			</Grid>
 		</Grid> 
 		<TextBlock Text="{Binding Message}" IsVisible="{Binding IsMessageVisible}" VerticalAlignment="Center" HorizontalAlignment="Center"/>

@@ -9,7 +9,9 @@
         <local:ViewLocator/>
     </Application.DataTemplates>
   
+
     <Application.Styles>
-        <FluentTheme />
+		<SimpleTheme />
+		<StyleInclude Source="avares://Citrus.Avalonia/Magma.xaml"/>
     </Application.Styles>
 </Application>
