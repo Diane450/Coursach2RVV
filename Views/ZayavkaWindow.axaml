@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:kursachRVV.ViewModels"
+		x:Class="kursachRVV.ZayavkaWindow"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:DataType="vm:ZayavkaWindowViewModel"
+        Icon="/Assets/logo.png"
+        Title="Терминал сотрудника техподдержки">
+	<Grid ColumnDefinitions="*, *" RowDefinitions="*, *, *, *, *, *, *, *" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 20 0 0">
+		<TextBlock Text="Описание: " Grid.Column="0" Grid.Row="0" />
+		<TextBlock Text="Срочность: " Grid.Column="0" Grid.Row="1"/>
+		<TextBlock Text="Расположение: " Grid.Column="0" Grid.Row="2"/>
+		<TextBlock Text="Дата: " Grid.Column="0" Grid.Row="3"/>
+		<TextBlock Text="Статус: " Grid.Column="0" Grid.Row="4"/>
+		<TextBlock Text="Исполнитель: " Grid.Column="0" Grid.Row="5"/>
+
+		<TextBlock Text="{Binding SelectedZayavka.Opisanie}" Grid.Column="1" Grid.Row="0" />
+		<TextBlock Text="{Binding SelectedZayavka.Srochnost.Name}" Grid.Column="1" Grid.Row="1"/>
+		<TextBlock Text="{Binding SelectedZayavka.Raspolozenie}" Grid.Column="1" Grid.Row="2"/>
+		<TextBlock Text="{Binding SelectedZayavka.DateAndTime}" Grid.Column="1" Grid.Row="3"/>
+
+		<ComboBox ItemsSource="{Binding Statuses}" Grid.Column="1" Grid.Row="4" Height="40" SelectedItem="{Binding SelectedStatus}" SelectedValueBinding="{Binding IdStatys}" Margin="10">
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock FontSize="16" Text="{Binding Statys}" />
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+		
+		<ComboBox ItemsSource="{Binding Ispolnitels}" Grid.Column="1" Grid.Row="5" Height="40" SelectedItem="{Binding SelectedIspolnitel}" SelectedValueBinding="{Binding IdIspolnitel}" Margin="10">
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock FontSize="16" Text="{Binding TexOtSotrydnikNavigation.Familia}" />
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+		<Button Content="Изменить" Height="30" Grid.Column="1" Grid.Row="6" Margin="0 20 0 0" HorizontalAlignment="Center"/>
+	</Grid>
+</Window>
