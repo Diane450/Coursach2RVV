@@ -1,17 +1,17 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:kursachRVV.ViewModels"
-		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="kursachRVV.AdminWindow"
-        x:DataType="vm:AdminWindowViewModel"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="kursachRVV.TechDepartmentWindow"
+        x:DataType="vm:TechDepartmentWindowViewModel"
         Icon="/Assets/logo.png"
-        Title="Терминал сотрудника техподдержки">
-	
+        Title="Терминал сотрудника техподдержки"
+		WindowStartupLocation="CenterScreen">
 	<StackPanel Orientation="Vertical">
 		<StackPanel Orientation="Horizontal">
-			
+
 			<ComboBox ItemsSource="{Binding Srochnosts}" Height="40" SelectedItem="{Binding SelectedSrochnost}" SelectedValueBinding="{Binding Id}" Margin="10">
 				<ComboBox.ItemTemplate>
 					<DataTemplate>
@@ -29,7 +29,7 @@
 			</ComboBox>
 
 			<ComboBox ItemsSource="{Binding SortValues}" Height="40" SelectedItem="{Binding SelectedSortValues}" FontSize="16" Margin="10"/>
-		
+
 			<Button Content="Найти" Command="{Binding Search}"/>
 			<TextBox Text="{Binding SearchId}" Margin="20 0 0 0" Height="30" Width="120" MaxLength="10" Watermark="Id заявки"/>
 		</StackPanel>
@@ -61,8 +61,7 @@
 				<TextBlock Text="Не определен" IsVisible="{Binding !IsIspolnitelDefined}" Foreground="IndianRed" Grid.Column="1" Grid.Row="5"/>
 				<Button Content="Изменить" Click="ChangeZayavka" Grid.Column="1" Grid.Row="5" Margin="30"/>
 			</Grid>
-		</Grid> 
+		</Grid>
 		<TextBlock Text="{Binding Message}" IsVisible="{Binding IsMessageVisible}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 	</StackPanel>
-	
 </Window>

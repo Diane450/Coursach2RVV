@@ -17,16 +17,19 @@ namespace kursachRVV.Services
 
         public static async Task<Vhod> Authorize(string login, string password)
         {
-            return await _dbContext.Vhods.Include(x=>x.TexOtNavigation).FirstAsync(u => u.Login == login && u.Password == password);
+            return await _dbContext.Vhods
+                .Include(x => x.TexOtNavigation)
+                .ThenInclude(x=>x.IspolnitelTexOtSotrydnikNavigations)
+                .FirstAsync(u => u.Login == login && u.Password == password);
         }
 
         public static async Task<List<ZayavkiDTO>> GetAllZayavki()
         {
             return await _dbContext.Zayavkis
                 .Include(x => x.IspolnitelNavigation)
-                .ThenInclude(x=>x.TexOtSotrydnikNavigation)
+                .ThenInclude(x => x.TexOtSotrydnikNavigation)
                 .Include(x => x.StastusNavigation)
-                .Include(x=>x.SrochnostNavigation)
+                .Include(x => x.SrochnostNavigation)
                 .Select(x => new ZayavkiDTO()
                 {
                     IdZayavki = x.IdZayavki,
@@ -51,7 +54,23 @@ namespace kursachRVV.Services
         public static async Task<ObservableCollection<Ispolnitel>> GetAllIspolnitels()
         {
             return new ObservableCollection<Ispolnitel>(await _dbContext.Ispolnitels
-                .Include(x=>x.TexOtSotrydnikNavigation).ToListAsync());
+                .Include(x => x.TexOtSotrydnikNavigation).ToListAsync());
+        }
+
+        public static async Task SaveZayavkaChanges(ZayavkiDTO zayavkiDTO, Ispolnitel ispolnitel, Status status)
+        {
+            var zayavka = await _dbContext.Zayavkis.FirstAsync(x => x.IdZayavki == zayavkiDTO.IdZayavki);
+            zayavka.StastusNavigation = status;
+            zayavka.IspolnitelNavigation = ispolnitel;
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public static async Task SaveZayavkaChanges(ZayavkiDTO zayavkiDTO, Status status, Vhod user)
+        {
+            var zayavka = await _dbContext.Zayavkis.FirstAsync(x => x.IdZayavki == zayavkiDTO.IdZayavki);
+            zayavka.StastusNavigation = status;
+            zayavka.IspolnitelNavigation = user.TexOtNavigation.IspolnitelIdIspolnitelNavigation;
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

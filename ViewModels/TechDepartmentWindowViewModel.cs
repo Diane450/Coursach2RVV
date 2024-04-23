@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace kursachRVV.ViewModels
 {
-    public class AdminWindowViewModel : ViewModelBase
+    public class TechDepartmentWindowViewModel : ViewModelBase
     {
         public List<ZayavkiDTO> ZayavkiList { get; set; }
 
@@ -115,13 +115,13 @@ namespace kursachRVV.ViewModels
             get { return _searchId; }
             set
             {
-                if(int.TryParse(value, out int id)|| value=="")
+                if (int.TryParse(value, out int id) || value == "")
                     _searchId = this.RaiseAndSetIfChanged(ref _searchId, value);
             }
         }
 
 
-        public AdminWindowViewModel()
+        public TechDepartmentWindowViewModel()
         {
             GetContent();
         }

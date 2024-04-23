@@ -24,5 +24,11 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/Home/Desktop/курсачи/kursachRVV/Views/AuthorizeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/TechDepartmentWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/TechDepartmentZayavkaWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Home/Desktop/курсачи/kursachRVV/Views/ZayavkaWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

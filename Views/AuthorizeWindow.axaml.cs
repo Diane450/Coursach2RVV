@@ -26,12 +26,11 @@ namespace kursachRVV.Views
                         adminWindow.Show();
                         Close();
                         break;
-                    //case 2:
-                        //Teacher teacher = await DBCall.GetTeacherData(user);
-                        //var window = new TeacherWindow(teacher);
-                        //window.Show();
-                        //Close();
-                        //break;
+                    case 2:
+                        var TechDepartmentWindow = new TechDepartmentWindow(user);
+                        TechDepartmentWindow.Show();
+                        Close();
+                        break;
                 }
             }
             catch

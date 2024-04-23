@@ -7,21 +7,23 @@ using kursachRVV.ViewModels;
 
 namespace kursachRVV;
 
-public partial class AdminWindow : Window
+public partial class TechDepartmentWindow : Window
 {
-    public AdminWindow()
+    public Vhod User { get; set; }
+    public TechDepartmentWindow(Vhod user)
     {
         InitializeComponent();
-        DataContext = new AdminWindowViewModel();
+        User = user;
+        DataContext = new TechDepartmentWindowViewModel();
     }
+
     private async void ChangeZayavka(object sender, RoutedEventArgs e)
     {
         var button = (Button)sender;
-        var dataContext = (AdminWindowViewModel)button.DataContext;
+        var dataContext = (TechDepartmentWindowViewModel)button.DataContext;
         var selectedZayavka = dataContext.SelectedZayavka;
 
-        var window = new ZayavkaWindow(selectedZayavka, (AdminWindowViewModel)DataContext);
+        var window = new TechDepartmentZayavkaWindow(selectedZayavka, (TechDepartmentWindowViewModel)DataContext, User);
         window.ShowDialog(this);
     }
-
 }

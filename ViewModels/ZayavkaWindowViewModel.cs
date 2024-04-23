@@ -47,20 +47,45 @@ namespace kursachRVV.ViewModels
             set { _selectedIspolnitel = this.RaiseAndSetIfChanged(ref _selectedIspolnitel, value); }
         }
 
+        private string _message;
 
-        public ZayavkaWindowViewModel(ZayavkiDTO zayavkiDTO)
+        public string Message
+        {
+            get { return _message; }
+            set { _message = this.RaiseAndSetIfChanged(ref _message, value); }
+        }
+
+        public AdminWindowViewModel AdminWindowViewModel { get; set; }
+
+        public ZayavkaWindowViewModel(ZayavkiDTO zayavkiDTO, AdminWindowViewModel adminWindowViewModel)
         {
             SelectedZayavka = zayavkiDTO;
-
+            AdminWindowViewModel = adminWindowViewModel;
             GetContent();
-
         }
         private async Task GetContent()
         {
             Statuses = await DBCall.GetAllStatuses();
             Ispolnitels = await DBCall.GetAllIspolnitels();
-            SelectedStatus = Statuses.First(s=>s.IdStatys == SelectedZayavka.Status.IdStatys);
+            SelectedStatus = Statuses.First(s => s.IdStatys == SelectedZayavka.Status.IdStatys);
             SelectedIspolnitel = Ispolnitels[0];
+        }
+
+        public async Task SaveChanges()
+        {
+            try
+            {
+                await DBCall.SaveZayavkaChanges(SelectedZayavka, SelectedIspolnitel, SelectedStatus);
+                SelectedZayavka.Status = SelectedStatus;
+                SelectedZayavka.Ispolnitel = SelectedIspolnitel;
+                AdminWindowViewModel.IsIspolnitelDefined = true;
+                AdminWindowViewModel.Filter();
+                Message = "Изменения сохранены";
+            }
+            catch (Exception ex)
+            {
+                Message = "Не удалось сохранить изменения";
+            }
         }
     }
 }

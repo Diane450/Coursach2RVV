@@ -8,9 +8,9 @@ namespace kursachRVV;
 
 public partial class ZayavkaWindow : Window
 {
-    public ZayavkaWindow(ZayavkiDTO zayavkiDTO)
+    public ZayavkaWindow(ZayavkiDTO zayavkiDTO, AdminWindowViewModel adminWindowViewModel)
     {
         InitializeComponent();
-        DataContext = new ZayavkaWindowViewModel(zayavkiDTO);
+        DataContext = new ZayavkaWindowViewModel(zayavkiDTO, adminWindowViewModel);
     }
 }
