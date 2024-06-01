@@ -76,7 +76,7 @@ namespace kursachRVV.ViewModels
             set { _message = this.RaiseAndSetIfChanged(ref _message, value); }
         }
 
-        private bool _isMessageVisible;
+        private bool _isMessageVisible = true;
 
         public bool IsMessageVisible
         {
@@ -120,6 +120,13 @@ namespace kursachRVV.ViewModels
             }
         }
 
+        private bool _isDataLoaded = false;
+
+        public bool IsDataLoaded
+        {
+            get { return _isDataLoaded; }
+            set { _isDataLoaded = this.RaiseAndSetIfChanged(ref _isDataLoaded, value); }
+        }
 
         public TechDepartmentWindowViewModel()
         {

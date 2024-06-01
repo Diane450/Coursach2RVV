@@ -53,10 +53,6 @@
               "target": "Package",
               "version": "[11.0.6, )"
             },
-            "Avalonia.Diagnostics": {
-              "target": "Package",
-              "version": "[11.0.6, )"
-            },
             "Avalonia.Fonts.Inter": {
               "target": "Package",
               "version": "[11.0.6, )"
@@ -90,6 +86,10 @@
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
             }
           },
           "imports": [
@@ -108,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:kursachRVV.ViewModels"
-		mc:Ignorable="d" MinWidth="875" MinHeight="560" Width="875" Height="560"
+		mc:Ignorable="d" MinWidth="875" MinHeight="560" Width="875" Height="560" MaxWidth="875" MaxHeight="560"
         x:Class="kursachRVV.TechDepartmentWindow"
         x:DataType="vm:TechDepartmentWindowViewModel"
         Icon="/Assets/logo.png"
@@ -37,6 +37,7 @@
 
 			<TextBox Text="{Binding SearchId}" Padding="5" Background="White"  Height="30" Width="120" MaxLength="10" Watermark="Id заявки"/>
 			<Button Content="Найти" Command="{Binding Search}" Height="30" Margin="20 0 0 0" Padding="5"/>
+			<Button Content="Отчет" Click="OpenReportWindow" Height="30" Margin="20 0 0 0" Padding="5" HorizontalContentAlignment="Center"/>
 		</StackPanel>
 
 		<Grid ColumnDefinitions="200, *" Height="750" MinHeight="560" Background="White" HorizontalAlignment="Left" IsVisible="{Binding !IsMessageVisible}" Width="1600">
@@ -65,7 +66,7 @@
 				<TextBlock Text="{Binding SelectedZayavka.Status.Statys}" Grid.Column="1" Grid.Row="4"/>
 				<TextBlock Text="{Binding SelectedZayavka.Ispolnitel.TexOtSotrydnikNavigation.Familia}" Grid.Column="1" Grid.Row="5"/>
 				<TextBlock Text="Не определен" IsVisible="{Binding !IsIspolnitelDefined}" Foreground="IndianRed" Grid.Column="1" Grid.Row="5"/>
-				<Button Content="Изменить" Click="ChangeZayavka" Grid.Column="1" Grid.Row="5" Width="150" HorizontalAlignment="Left" Margin="0 40 0 0"/>
+				<Button Content="Изменить" Click="ChangeZayavka" Grid.Column="1" Grid.Row="5" Width="150" HorizontalAlignment="Left"  HorizontalContentAlignment="Center" Margin="0 40 0 0"/>
 			</Grid>
 		</Grid>
 		<TextBlock Text="{Binding Message}" IsVisible="{Binding IsMessageVisible}" VerticalAlignment="Center" HorizontalAlignment="Center"/>

@@ -26,4 +26,10 @@ public partial class TechDepartmentWindow : Window
         var window = new TechDepartmentZayavkaWindow(selectedZayavka, (TechDepartmentWindowViewModel)DataContext, User);
         window.ShowDialog(this);
     }
+    private void OpenReportWindow(object sender, RoutedEventArgs e)
+    {
+        var window = new ReportWindow();
+        window.ShowDialog(this);
+    }
+
 }

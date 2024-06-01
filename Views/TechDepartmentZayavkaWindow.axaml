@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:kursachRVV.ViewModels"
-		mc:Ignorable="d" MinWidth="803" MinHeight="284" Width="803" Height="284"
+		mc:Ignorable="d" MinWidth="700" MinHeight="300" Width="700" Height="300" MaxWidth="700" MaxHeight="300"
         x:Class="kursachRVV.TechDepartmentZayavkaWindow"
 		x:DataType="vm:TechDepartmentZayavkaWindowViewModel"
         Icon="/Assets/logo.png"
@@ -33,7 +33,7 @@
 				</DataTemplate>
 			</ComboBox.ItemTemplate>
 		</ComboBox>
-		<Button Content="{Binding ButtonText}" Height="35" Width="200" Padding="5" IsEnabled="{Binding IsEnable}" Command="{Binding SaveChanges}" Grid.Column="1" Grid.Row="5" Margin="0 20 0 0" HorizontalAlignment="Left"/>
+		<Button Content="{Binding ButtonText}" Height="35" Width="200" Padding="5" IsEnabled="{Binding IsEnable}" Command="{Binding SaveChanges}" Grid.Column="1" Grid.Row="5" Margin="0 20 0 0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 		<TextBlock Text="{Binding Message}" Grid.Column="1" Grid.Row="7"/>
 	</Grid>
 </Window>

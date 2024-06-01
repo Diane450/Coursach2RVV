@@ -11,7 +11,70 @@
   
 
     <Application.Styles>
-		<SimpleTheme />
-		<StyleInclude Source="avares://Citrus.Avalonia/Magma.xaml"/>
-    </Application.Styles>
+		<FluentTheme>
+			<FluentTheme.Palettes>
+				<!-- Светлая тема -->
+				<ColorPaletteResources x:Key="Light"
+									   Accent="#ffcc3333"
+									   AltHigh="White"
+									   AltLow="White"
+									   AltMedium="White"
+									   AltMediumHigh="White"
+									   AltMediumLow="White"
+									   BaseHigh="Black"
+									   BaseLow="#ffffe5e5"
+									   BaseMedium="#ffcc9999"
+									   BaseMediumHigh="#ffb36666"
+									   BaseMediumLow="#ffe6b3b3"
+									   ChromeAltLow="#ffb36666"
+									   ChromeBlackHigh="Black"
+									   ChromeBlackLow="#ffffe5e5"
+									   ChromeBlackMedium="#ffb36666"
+									   ChromeBlackMediumLow="#ffcc9999"
+									   ChromeDisabledHigh="#ffffe5e5"
+									   ChromeDisabledLow="#ffcc9999"
+									   ChromeGray="#ffe6b3b3"
+									   ChromeHigh="#ffffe5e5"
+									   ChromeLow="#fffff2f2"
+									   ChromeMedium="#ffffcccc"
+									   ChromeMediumLow="#fffff2f2"
+									   ChromeWhite="White"
+									   ListLow="#ffffcccc"
+									   ListMedium="#ffffe5e5"
+									   RegionColor="#fffff5f5" />
+
+				<!-- Темная тема -->
+				<ColorPaletteResources x:Key="Dark"
+									   Accent="#ffcc3333"
+									   AltHigh="Black"
+									   AltLow="Black"
+									   AltMedium="Black"
+									   AltMediumHigh="Black"
+									   AltMediumLow="Black"
+									   BaseHigh="White"
+									   BaseLow="#ff7b3f3f"
+									   BaseMedium="#ffcc9999"
+									   BaseMediumHigh="#ffb36666"
+									   BaseMediumLow="#ff8d5959"
+									   ChromeAltLow="#ffb36666"
+									   ChromeBlackHigh="Black"
+									   ChromeBlackLow="#ffb36666"
+									   ChromeBlackMedium="Black"
+									   ChromeBlackMediumLow="Black"
+									   ChromeDisabledHigh="#ff7b3f3f"
+									   ChromeDisabledLow="#ffcc9999"
+									   ChromeGray="#ff8d5959"
+									   ChromeHigh="#ff8d5959"
+									   ChromeLow="#ff332222"
+									   ChromeMedium="#ff4d2626"
+									   ChromeMediumLow="#ff593232"
+									   ChromeWhite="White"
+									   ListLow="#ff4d2626"
+									   ListMedium="#ff7b3f3f"
+									   RegionColor="#ff2a1a1a" />
+			</FluentTheme.Palettes>
+		</FluentTheme>
+
+
+	</Application.Styles>
 </Application>

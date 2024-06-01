@@ -4,6 +4,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using kursachRVV.Models;
 using kursachRVV.ViewModels;
+using kursachRVV.Views;
 
 namespace kursachRVV;
 
@@ -23,5 +24,9 @@ public partial class AdminWindow : Window
         var window = new ZayavkaWindow(selectedZayavka, (AdminWindowViewModel)DataContext);
         window.ShowDialog(this);
     }
-
+    private void OpenReportWindow(object sender, RoutedEventArgs e)
+    {
+        var window = new ReportWindow();
+        window.ShowDialog(this);
+    }
 }

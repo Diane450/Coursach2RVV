@@ -1,0 +1,5 @@
+C:\Users\Home\Desktop\курсачи\kursachRVV\bin\Release\net7.0\win-x64\publish\kursachRVV.pdb
+C:\Users\Home\Desktop\курсачи\kursachRVV\bin\Release\net7.0\win-x64\publish\av_libglesv2.dll
+C:\Users\Home\Desktop\курсачи\kursachRVV\bin\Release\net7.0\win-x64\publish\libHarfBuzzSharp.dll
+C:\Users\Home\Desktop\курсачи\kursachRVV\bin\Release\net7.0\win-x64\publish\libSkiaSharp.dll
+C:\Users\Home\Desktop\курсачи\kursachRVV\bin\Release\net7.0\win-x64\publish\kursachRVV.exe

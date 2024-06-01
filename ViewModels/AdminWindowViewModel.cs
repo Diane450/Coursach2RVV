@@ -76,7 +76,7 @@ namespace kursachRVV.ViewModels
             set { _message = this.RaiseAndSetIfChanged(ref _message, value); }
         }
 
-        private bool _isMessageVisible;
+        private bool _isMessageVisible = true;
 
         public bool IsMessageVisible
         {

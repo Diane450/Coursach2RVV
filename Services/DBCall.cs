@@ -19,7 +19,7 @@ namespace kursachRVV.Services
         {
             return await _dbContext.Vhods
                 .Include(x => x.TexOtNavigation)
-                .ThenInclude(x=>x.IspolnitelTexOtSotrydnikNavigations)
+                .ThenInclude(x => x.IspolnitelTexOtSotrydnikNavigations)
                 .FirstAsync(u => u.Login == login && u.Password == password);
         }
 
@@ -71,6 +71,27 @@ namespace kursachRVV.Services
             zayavka.StastusNavigation = status;
             zayavka.IspolnitelNavigation = user.TexOtNavigation.IspolnitelIdIspolnitelNavigation;
             await _dbContext.SaveChangesAsync();
+        }
+
+        public static async Task<List<Zayavki>> GetDoneRequest(DateOnly[] range)
+        {
+            return await _dbContext.Zayavkis.Where(z => z.DateAndTime > range[0] && z.DateAndTime < range[1] && z.Stastus==2)
+                .Include(z => z.IspolnitelNavigation)
+                .ThenInclude(a => a.TexOtSotrydnikNavigation)
+                .ToListAsync();
+        }
+
+        public static async Task<List<Zayavki>> GetDeniedRequest(DateOnly[] range)
+        {
+            return await _dbContext.Zayavkis.Where(z => z.DateAndTime > range[0] && z.DateAndTime < range[1] && z.Stastus == 3)
+                .Include(z=>z.IspolnitelNavigation)
+                .ThenInclude(a=>a.TexOtSotrydnikNavigation)
+                .ToListAsync();
+        }
+        public static async Task<List<Zayavki>> GetWorkingRequest(DateOnly[] range)
+        {
+            return await _dbContext.Zayavkis.Where(z => z.DateAndTime > range[0] && z.DateAndTime < range[1] && z.Stastus == 3)
+                .ToListAsync();
         }
     }
 }
