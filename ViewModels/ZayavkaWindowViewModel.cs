@@ -68,7 +68,9 @@ namespace kursachRVV.ViewModels
             Statuses = await DBCall.GetAllStatuses();
             Ispolnitels = await DBCall.GetAllIspolnitels();
             SelectedStatus = Statuses.First(s => s.IdStatys == SelectedZayavka.Status.IdStatys);
-            SelectedIspolnitel = Ispolnitels[0];
+            SelectedIspolnitel = Ispolnitels.Where(s=>s.IdIspolnitel == SelectedZayavka.Ispolnitel.IdIspolnitel).First();
+            if (SelectedIspolnitel == null)
+                SelectedIspolnitel = Ispolnitels[0];
         }
 
         public async Task SaveChanges()
