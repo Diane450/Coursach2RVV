@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:kursachRVV.ViewModels"
 		x:Class="kursachRVV.ZayavkaWindow"
-		mc:Ignorable="d" MinWidth="700" MinHeight="300" Width="700" Height="300" MaxWidth="700" MaxHeight="300"
+		mc:Ignorable="d" MinWidth="900" MinHeight="300" Width="900" Height="300" MaxWidth="900" MaxHeight="300"
         x:DataType="vm:ZayavkaWindowViewModel"
         Icon="/Assets/logo.png"
         Title="Терминал сотрудника техподдержки"

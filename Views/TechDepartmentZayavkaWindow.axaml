@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:kursachRVV.ViewModels"
-		mc:Ignorable="d" MinWidth="700" MinHeight="300" Width="700" Height="300" MaxWidth="700" MaxHeight="300"
+		mc:Ignorable="d" MinWidth="900" MinHeight="300" Width="900" Height="300" MaxWidth="900" MaxHeight="300"
         x:Class="kursachRVV.TechDepartmentZayavkaWindow"
 		x:DataType="vm:TechDepartmentZayavkaWindowViewModel"
         Icon="/Assets/logo.png"

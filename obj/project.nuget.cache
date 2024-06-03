@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WhuxtyK/KhCz+4aOlNmmOjYVBGEqi+wujgi1zUSJ0xKVTeFts2Gf5Nk9W4uQxe30uNinVFd9dZyPv6hDoI4z3A==",
+  "dgSpecHash": "UftVhG6eHElDluCk7xZnSbIRlu4jWmm2vAtiq6Qz0yKiq8cbGW8y/TaEoN/P1479DFmPtG1G7Z4h2PSgfQzfQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Home\\Desktop\\курсачи\\kursachRVV\\kursachRVV.csproj",
+  "projectFilePath": "C:\\Users\\Home\\Desktop\\dbrf\\kursachRVV.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Home\\.nuget\\packages\\avalonia\\11.0.6\\avalonia.11.0.6.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",

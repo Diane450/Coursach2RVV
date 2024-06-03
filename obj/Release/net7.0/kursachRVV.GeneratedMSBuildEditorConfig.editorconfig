@@ -13,28 +13,28 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = kursachRVV
-build_property.ProjectDir = C:\Users\Home\Desktop\курсачи\kursachRVV\
+build_property.ProjectDir = C:\Users\Home\Desktop\dbrf\
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/App.axaml]
+[C:/Users/Home/Desktop/dbrf/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/Styles/Styles.axaml]
+[C:/Users/Home/Desktop/dbrf/Styles/Styles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/AdminWindow.axaml]
+[C:/Users/Home/Desktop/dbrf/Views/AdminWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/AuthorizeWindow.axaml]
+[C:/Users/Home/Desktop/dbrf/Views/AuthorizeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/ReportWindow.axaml]
+[C:/Users/Home/Desktop/dbrf/Views/ReportWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/TechDepartmentWindow.axaml]
+[C:/Users/Home/Desktop/dbrf/Views/TechDepartmentWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/TechDepartmentZayavkaWindow.axaml]
+[C:/Users/Home/Desktop/dbrf/Views/TechDepartmentZayavkaWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/курсачи/kursachRVV/Views/ZayavkaWindow.axaml]
+[C:/Users/Home/Desktop/dbrf/Views/ZayavkaWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
