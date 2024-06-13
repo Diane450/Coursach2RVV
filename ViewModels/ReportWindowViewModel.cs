@@ -43,9 +43,11 @@ namespace kursachRVV.ViewModels
             set { _message = this.RaiseAndSetIfChanged(ref _message, value); }
         }
 
-        public ReportWindowViewModel()
-        {
+        public ReportWindow Window { get; set; }
 
+        public ReportWindowViewModel(ReportWindow window)
+        {
+            Window = window;
         }
 
 
@@ -64,7 +66,7 @@ namespace kursachRVV.ViewModels
                 Array.Sort(range);
                 Report report = new Report(range);
                 await report.GetReportData();
-                report.CreateReport();
+                await report.CreateReport(Window);
                 Message = "Отчет готов";
             }
             catch

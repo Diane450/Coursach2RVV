@@ -9,6 +9,9 @@ using System.Drawing.Imaging;
 using Avalonia.Platform;
 using kursachRVV.Models;
 using static iTextSharp.text.pdf.AcroFields;
+using Avalonia.Controls;
+using Avalonia.Platform.Storage;
+using Image = iTextSharp.text.Image;
 
 namespace kursachRVV.Services
 {
@@ -57,52 +60,64 @@ namespace kursachRVV.Services
             PdfDoc.Add(title);
         }
 
-        public void CreateReport()
+        public async Task CreateReport(ReportWindow window)
         {
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            PdfDoc = new Document(PageSize.A4, 40f, 40f, 60f, 60f);
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            PdfWriter.GetInstance(PdfDoc, new FileStream(desktopPath + $"\\Отчет {DateTime.Now:yyyy-MM-dd_HH-mm-ss}.pdf", FileMode.Create));
-            PdfDoc.Open();
-
-            string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.TTF");
-            BaseFont fgBaseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            Font fgFont = new Font(fgBaseFont, 14, Font.NORMAL, new BaseColor(0, 0, 0));
-
-            //AddReportLogo();
-
-            var spacer = new Paragraph("")
+            var storageProvider = window.StorageProvider;
+            var result = await storageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
             {
-                SpacingAfter = 10f,
-                SpacingBefore = 10f
-            };
-            PdfDoc.Add(spacer);
-
-            var title = new Paragraph($"ОТЧЕТ ЗАЯВОК В ТЕХ. ОТДЕЛ ЗА ПЕРОИД \r ОТ {DateRange[0]} ДО {DateRange[1]}", new Font(fgBaseFont, 14, Font.BOLD, new BaseColor(0, 0, 0)))
+                Title = "Сохранить отчет как",
+                FileTypeChoices = new List<FilePickerFileType>
+                {
+                    new FilePickerFileType("PDF")
+                    {
+                        Patterns = new[] { "*.pdf" }
+                    }
+                },
+                DefaultExtension = "pdf"
+            });
+            if (result!=null)
             {
-                SpacingAfter = 25f,
-                Alignment = Element.ALIGN_CENTER
-            };
-            PdfDoc.Add(title);
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                PdfDoc = new Document(PageSize.A4, 40f, 40f, 60f, 60f);
+                try
+                {
+                    using var fs = await result.OpenWriteAsync();
+                    PdfWriter.GetInstance(PdfDoc, fs);
+                    PdfDoc.Open();
 
-            AddHeaderTable(fgFont);
+                    string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.TTF");
+                    BaseFont fgBaseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+                    Font fgFont = new Font(fgBaseFont, 14, Font.NORMAL, new BaseColor(0, 0, 0));
 
-            AddDoneTable(fgFont);
+                    var spacer = new Paragraph("")
+                    {
+                        SpacingAfter = 10f,
+                        SpacingBefore = 10f
+                    };
+                    PdfDoc.Add(spacer);
 
-            AddDeniedTable(fgFont);
+                    var title = new Paragraph($"ОТЧЕТ ЗАЯВОК В ТЕХ. ОТДЕЛ ЗА ПЕРОИД \r ОТ {DateRange[0]} ДО {DateRange[1]}", new Font(fgBaseFont, 14, Font.BOLD, new BaseColor(0, 0, 0)))
+                    {
+                        SpacingAfter = 25f,
+                        Alignment = Element.ALIGN_CENTER
+                    };
+                    PdfDoc.Add(title);
 
-            AddWorkingTable(fgFont);
+                    AddHeaderTable(fgFont);
 
-            PdfDoc.Close();
-        }
+                    AddDoneTable(fgFont);
 
-        private void AddReportLogo()
-        {
-            var image = AssetLoader.Open(new Uri("avares://kursachRVV/Assets/logo.png"));
-            var png = Image.GetInstance(System.Drawing.Image.FromStream(image), ImageFormat.Png);
-            png.ScalePercent(25f);
-            png.SetAbsolutePosition(PdfDoc.Left, PdfDoc.Top);
-            PdfDoc.Add(png);
+                    AddDeniedTable(fgFont);
+
+                    AddWorkingTable(fgFont);
+
+                    PdfDoc.Close();
+                }
+                catch
+                {
+                    throw;
+                }
+            }
         }
 
         private void AddHeaderTable(Font fgFont)
@@ -124,7 +139,7 @@ namespace kursachRVV.Services
         private void AddDoneTable(Font fgFont)
         {
             CreateTitle("Выполненные заявки");
-            if (DoneRequests.Count>0)
+            if (DoneRequests.Count > 0)
             {
                 var statisticsTitleTable = new PdfPTable(new[] { .75f, 1f, 1f, .50f })
                 {
@@ -179,7 +194,7 @@ namespace kursachRVV.Services
         {
             CreateTitle("Отказанные заявки");
 
-            if (DoneRequests.Count>0)
+            if (DoneRequests.Count > 0)
             {
                 var statisticsTitleTable = new PdfPTable(new[] { .75f, 1f, 1f })
                 {
@@ -226,7 +241,7 @@ namespace kursachRVV.Services
         {
             CreateTitle("Заявки в работе");
 
-            if (WorkingRequests.Count>0)
+            if (WorkingRequests.Count > 0)
             {
                 var statisticsTitleTable = new PdfPTable(new[] { .75f, 1f, 1f })
                 {

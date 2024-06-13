@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Home\\Desktop\\dbrf\\kursachRVV.csproj": {}
+    "C:\\Users\\Home\\Source\\Repos\\Coursach2RVV\\kursachRVV.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Home\\Desktop\\dbrf\\kursachRVV.csproj": {
+    "C:\\Users\\Home\\Source\\Repos\\Coursach2RVV\\kursachRVV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Home\\Desktop\\dbrf\\kursachRVV.csproj",
+        "projectUniqueName": "C:\\Users\\Home\\Source\\Repos\\Coursach2RVV\\kursachRVV.csproj",
         "projectName": "kursachRVV",
-        "projectPath": "C:\\Users\\Home\\Desktop\\dbrf\\kursachRVV.csproj",
+        "projectPath": "C:\\Users\\Home\\Source\\Repos\\Coursach2RVV\\kursachRVV.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Home\\Desktop\\dbrf\\obj\\",
+        "outputPath": "C:\\Users\\Home\\Source\\Repos\\Coursach2RVV\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -50,6 +55,10 @@
               "version": "[11.0.6, )"
             },
             "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.6, )"
+            },
+            "Avalonia.Diagnostics": {
               "target": "Package",
               "version": "[11.0.6, )"
             },
@@ -108,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kursachRVV")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87d9c7a81608aab826422d4de697cc2a2a1d35b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("kursachRVV")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kursachRVV")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
